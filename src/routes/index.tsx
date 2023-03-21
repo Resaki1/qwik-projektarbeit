@@ -5,6 +5,7 @@ export default component$(() => {
   return (
     <div>
       <h1>Welcome to lookal!</h1>
+      <p>test</p>
     </div>
   );
 });
