@@ -1,4 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import styles from "./header.scss?inline";
 
 const LookalLogo = () => (
@@ -21,7 +22,10 @@ export default component$(() => {
 
   return (
     <header>
-      <LookalLogo />
+      <Link href="/">
+        <LookalLogo />
+      </Link>
+      <Link href="products">Suche</Link>
     </header>
   );
 });

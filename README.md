@@ -63,3 +63,9 @@ The production build will generate client and server modules by running both cli
 ```shell
 npm run build # or `yarn build`
 ```
+
+# Projektarbeit
+
+## Drawbacks
+
+- HMR not always working (not for Layouts?)
