@@ -1,20 +1,43 @@
 .home_wrapper {
-  height: 50vh;
+  height: 100%;
+  gap: 6vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-h1 {
+.home_claim-wrapper {
   display: flex;
-  gap: 4px;
-  align-items: end;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
+  margin-bottom: 4vw;
+}
+
+.home_illustration {
+  display: contents;
+}
+
+h1 {
   color: var(--color-primary);
   font-size: 4rem;
+  margin-top: 0;
 }
 
 p {
   font-size: 2rem;
   margin: 0;
+}
+
+@media (max-width: 830px) {
+  .home_claim-wrapper {
+    width: 50vw;
+    text-align: center;
+    height: 60vh;
+  }
+  .home_illustration {
+    display: none;
+  }
 }

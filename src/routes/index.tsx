@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import Logo from "~/components/Logo/Logo";
+import ShoppingIllustration from "~/components/ShoppingIllustration/ShoppingIllustration";
 import styles from "./index.scss?inline";
 
 export default component$(() => {
@@ -8,10 +8,18 @@ export default component$(() => {
 
   return (
     <div class="home_wrapper">
-      <h1>
-        Willkommen bei <Logo />!
-      </h1>
-      <p>Finde alles was du brauchst bei deinen lokalen Shops!</p>
+      <div class="home_claim-wrapper">
+        <h1>
+          Willkommen bei <span class="logo">lookal</span>!
+        </h1>
+        <p>
+          Finde alles was du brauchst bei deinen{" "}
+          <span class="logo primary">lookalen</span> Shops!
+        </p>
+      </div>
+      <div class="home_illustration">
+        <ShoppingIllustration />
+      </div>
     </div>
   );
 });

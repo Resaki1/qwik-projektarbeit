@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 :root {
   --primary: 110, 107, 230;
   --white: 250, 255, 253;
@@ -25,6 +26,8 @@ body {
 
 main {
   padding: 32px 64px;
+  min-height: calc(100vh - 48px);
+  box-sizing: border-box;
 }
 
 h1,
@@ -35,4 +38,14 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.primary {
+  color: var(--color-primary);
 }
