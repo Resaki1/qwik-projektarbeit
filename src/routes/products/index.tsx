@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { loader$ } from "@builder.io/qwik-city";
-import ProductCard from "~/components/productCard/productCard";
+import ProductCard from "~/components/ProductCard/ProductCard";
 import { products } from "./products";
 import styles from "./products.scss?inline";
 

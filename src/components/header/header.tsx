@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import styles from "./header.scss?inline";
+import styles from "./Header.scss?inline";
 
 const LookalLogo = () => (
   <svg
@@ -25,7 +25,7 @@ export default component$(() => {
       <Link href="/">
         <LookalLogo />
       </Link>
-      <Link href="products">Suche</Link>
+      <Link href="/products">Suche</Link>
     </header>
   );
 });

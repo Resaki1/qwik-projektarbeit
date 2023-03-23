@@ -2,8 +2,8 @@
   --product-card-height: 192px;
   background: rgba(255, 255, 255, 0.85);
   opacity: 0.85;
-  box-shadow: 0px 4px 12px rgba(50, 213, 144, 0.25);
-  backdrop-filter: blur(6px);
+  box-shadow: var(--default-shadow);
+  backdrop-filter: var(--default-bg-blur);
   height: var(--product-card-height);
   width: 160px;
 

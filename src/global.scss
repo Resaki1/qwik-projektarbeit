@@ -1,7 +1,15 @@
 :root {
-  --color-primary: #32d590;
+  --primary: 110, 107, 230;
+  --white: 250, 255, 253;
+
+  --color-primary: rgb(var(--primary));
   --color-white: #fafffd;
-  --color-background: #d8f3e1;
+  --color-white-frosted: rgba(var(--white), 0.5);
+  --color-background: rgb(var(--white));
+
+  --default-bg-blur: blur(12px);
+
+  --default-shadow: 0px 2px 8px rgba(var(--primary), 0.2);
 }
 
 body {
