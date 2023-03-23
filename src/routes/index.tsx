@@ -1,11 +1,17 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import Logo from "~/components/Logo/Logo";
+import styles from "./index.scss?inline";
 
 export default component$(() => {
+  useStylesScoped$(styles);
+
   return (
-    <div>
-      <h1>Welcome to lookal!</h1>
-      <p>test</p>
+    <div class="home_wrapper">
+      <h1>
+        Willkommen bei <Logo />!
+      </h1>
+      <p>Finde alles was du brauchst bei deinen lokalen Shops!</p>
     </div>
   );
 });

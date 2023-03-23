@@ -3,7 +3,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background: rgba(var(--white), 0.5);
-  height: 48px;
+  height: var(--header-height);
   padding: 0 32px;
   position: sticky;
   top: 0;
