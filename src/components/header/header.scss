@@ -13,4 +13,40 @@ header {
   backdrop-filter: var(--default-bg-blur);
 
   border-radius: 0px 0px 8px 8px;
+
+  .header_search {
+    position: relative;
+    --search-height: 32px;
+    --search-radius: 32px;
+
+    input {
+      height: var(--search-height);
+      width: 200px;
+      border: none;
+      border-radius: var(--search-radius);
+      background-color: white;
+      padding: 0 16px;
+      box-shadow: var(--default-shadow);
+    }
+
+    .header_search-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      box-sizing: border-box;
+      height: var(--search-height);
+      width: calc(var(--search-height) * 1.5);
+      border: none;
+      border-radius: 0 var(--search-radius) var(--search-radius) 0;
+      background-color: var(--color-primary);
+      cursor: pointer;
+      padding: 8px 12px 8px 8px;
+      display: flex;
+      justify-content: center;
+
+      * {
+        color: white !important;
+      }
+    }
+  }
 }
