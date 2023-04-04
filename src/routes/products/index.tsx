@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { loader$ } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import ProductCard from "~/components/ProductCard/ProductCard";
 import { products } from "./products";
 import styles from "./products.scss?inline";
@@ -8,7 +8,7 @@ import styles from "./products.scss?inline";
   console.log("test");
 }; */
 
-export const useGetProducts = loader$(() => {
+export const useGetProducts = routeLoader$(() => {
   return {
     products,
   };
