@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 :root {
-  --primary: 110, 107, 230;
+  --primary: 110, 96, 204;
   --white: 250, 255, 253;
 
   --color-primary: rgb(var(--primary));
@@ -39,6 +39,10 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 a {

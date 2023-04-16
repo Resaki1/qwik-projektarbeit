@@ -66,6 +66,18 @@ npm run build # or `yarn build`
 
 # Projektarbeit
 
+## Benefits
+
+- Great performance out of the box
+
 ## Drawbacks
 
-- HMR not always working (not for Layouts?)
+- HMR not always working
+  - Not for Layouts, dev server needs to be restarted
+  - CSS sometimes not updating, needs restart as well
+
+## Lighthouse Score
+
+| Performance | Best Practices | Accessibility | SEO  | PWA |
+| ----------- | -------------- | ------------- | ---- | --- |
+| 100%        | 100%           | 100%          | 100% | no  |

@@ -1,20 +1,36 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { component$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
+import { Link, useNavigate } from "@builder.io/qwik-city";
 import Logo from "../Logo/Logo";
 import styles from "./Header.scss?inline";
 
 export default component$(() => {
+  const navigate = useNavigate();
   useStylesScoped$(styles);
+  const searchtext = useSignal("");
 
   return (
     <header>
-      <Link href="/">
+      <Link href="/" aria-label="lookal's homepage">
         <Logo />
       </Link>
       <div class="header_search">
-        <input type="text" placeholder="Suche Produkte" />
+        <input
+          type="text"
+          placeholder="Suche Produkte"
+          bind:value={searchtext}
+          /* preventdefault:keypress */
+          onKeyPress$={(event) => {
+            if (event.key === "Enter") {
+              return navigate(`/products/${searchtext.value}`);
+            }
+          }}
+        />
         <div class="header_search-button">
-          <Link href="/products" class="header_search-button">
+          <Link
+            href={`/products/${searchtext.value}`}
+            class="header_search-button"
+            aria-label="search for products"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -32,7 +48,7 @@ export default component$(() => {
           </Link>
         </div>
       </div>
-      <Link href="/products">
+      <Link href="/products" aria-label="your shopping cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
