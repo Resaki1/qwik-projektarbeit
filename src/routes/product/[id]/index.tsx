@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
+import Carousel from "~/components/Carousel/Carousel";
 import { productDetails } from "~/data/productDetails";
 import { products } from "~/data/products";
 import { reviews } from "~/data/reviews";
@@ -22,11 +23,7 @@ export default component$(() => {
   return (
     <div>
       <h1>{product.name}</h1>
-      <div>
-        {product.images?.map((image) => (
-          <img key={image} src={image} alt={product.name} />
-        ))}
-      </div>
+      <Carousel images={product.images} />
       <div>{product.price}€</div>
       <div>{product.description}</div>
       <div>{product.rating}/5</div>
