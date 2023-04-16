@@ -74,6 +74,7 @@ npm run build # or `yarn build`
 
 - HMR not always working
   - Not for Layouts, dev server needs to be restarted
+  - Not for external content (i.e., image URLs)
   - CSS sometimes not updating, needs restart as well
 
 ## Lighthouse Score

@@ -11,7 +11,12 @@ export const productDetails: ProductDetails[] = [
     ],
     rating: 4.5,
     relatedProducts: ["ab0b69c9-9c1b-4a57-b6a3-7ca736b2d2b8"],
-    images: ["https://picsum.photos/370/316"],
+    images: [
+      "https://media3.bosch-home.com/Product_Shots/1800x1012/MCSA02381108_WAW28570_PGA1_def.webp",
+      "https://media3.bosch-home.com/Product_Shots/1800x1012/MCSA02381110_WAW28570_PGA2_def.webp",
+      "https://media3.bosch-home.com/Product_Shots/1800x1012/MCSA02381113_WAW28570_PGA3_def.webp",
+      "https://media3.bosch-home.com/Line_Drawings/1800x1012/MCZ_00390903_10800_WM16Y840_de-DE.webp",
+    ],
     brand: {
       name: "Bosch",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Bosch-logo.svg/1200px-Bosch-logo.svg.png",

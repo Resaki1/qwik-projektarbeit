@@ -5,24 +5,24 @@ export const stores: Store[] = [
     id: "1",
     name: "Müller",
     address: "Kaiserstraße 217, 76133 Karlsruhe, Germany",
-    logo: "https://www.mueller.de/fileadmin/_processed_/8/b/csm_Logo_Mueller_2014_16c_Pos_1011bc3324.png",
+    logo: "https://static.mueller.de/2ecfa5cea177b466ef4e640ee4f01f51c8691e3a/assets/base/images/logo.svg",
   },
   {
     id: "2",
     name: "Intersport",
     address: "Kaiserstraße 59-61, 76133 Karlsruhe, Germany",
-    logo: "https://www.intersport.de/on/demandware.static/-/Library-Sites-IntersportSharedLibrary/default/dwb2b41aa7/INTERSPORT_logo.svg",
+    logo: "https://www.intersport.de/media/vector/12/c4/7f/IntersportLogoOlXxcESCOqAmp.svg",
   },
   {
     id: "3",
     name: "H&M",
     address: "Kaiserstraße 81, 76133 Karlsruhe, Germany",
-    logo: "https://logos-download.com/wp-content/uploads/2016/05/HM_logo.png",
+    logo: "https://seeklogo.com/images/H/h-m-logo-89DCA36A67-seeklogo.com.png",
   },
   {
     id: "4",
     name: "Saturn",
     address: "Am Europaplatz 211, 76133 Karlsruhe",
-    logo: "https://www.saturn.de/dw/image/v2/AAQJ_PRD/on/demandware.static/-/Sites-masterCatalog_Saturn/default/dw8e1b8b3a/images/brand/saturn_logo.svg?sw=200&sh=200&sm=fit",
+    logo: "https://seeklogo.com/images/S/Saturn-logo-5DF1ED1000-seeklogo.com.png",
   },
 ];

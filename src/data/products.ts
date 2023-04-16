@@ -3,7 +3,8 @@ import type { Product } from "~/types";
 export const products: Product[] = [
   {
     id: "dd3079c3-3b0f-4372-a156-0e04c2d92811",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://media3.bosch-home.com/Product_Shots/1800x1012/MCSA01089193_WAW28570_def.webp",
     name: "Bosch WAW28570 Waschmaschine",
     price: 749.99,
     distance: 0.7,

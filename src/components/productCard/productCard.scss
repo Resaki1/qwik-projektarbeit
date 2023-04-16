@@ -1,7 +1,7 @@
 .product {
   --product-card-height: 256px;
   --product-card-width: calc(var(--product-card-height) / 1.382);
-  background: #fafffd;
+  background: #fafffd !important;
   box-shadow: var(--default-shadow);
   height: var(--product-card-height);
   width: var(--product-card-width);
@@ -14,6 +14,7 @@
     width: 100%;
     border-radius: 8px 8px 0px 0px;
     aspect-ratio: var(--product-card-width) / var(--product-image-height);
+    object-fit: contain;
   }
 
   .product__info {
@@ -26,10 +27,15 @@
     height: calc(100% - (var(--product-card-height) / 1.618));
     transform: translateY(-3px);
 
+    * {
+      text-decoration: none;
+    }
+
     h3 {
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-decoration: none;
     }
 
     .product__details {
