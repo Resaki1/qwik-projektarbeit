@@ -24,9 +24,15 @@ jobs: # list of things to do
       - name: Code Linting
         run: npm run lint
 
+      - name: Building
+        run: npm run build
+
   building:
     name: Building
     runs-on: ubuntu-latest
     steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
       - name: Building
         run: npm run build
