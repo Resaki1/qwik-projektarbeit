@@ -1,9 +1,10 @@
 import { component$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useNavigate } from "@builder.io/qwik-city";
 import Logo from "../Logo/Logo";
 import styles from "./Header.scss?inline";
 
 export default component$(() => {
+  const navigate = useNavigate();
   useStylesScoped$(styles);
   const searchtext = useSignal("");
 
@@ -17,6 +18,12 @@ export default component$(() => {
           type="text"
           placeholder="Suche Produkte"
           bind:value={searchtext}
+          /* preventdefault:keypress */
+          onKeyPress$={(event) => {
+            if (event.key === "Enter") {
+              return navigate(`/products/${searchtext.value}`);
+            }
+          }}
         />
         <div class="header_search-button">
           <Link

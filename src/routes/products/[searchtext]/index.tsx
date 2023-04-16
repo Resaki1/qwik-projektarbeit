@@ -10,11 +10,13 @@ import styles from "./products.scss?inline";
 
 export const useGetProducts = routeLoader$(({ params }) => {
   const searchtext = params.searchtext.toLowerCase();
-  const filteredProducts = products.filter(
-    (product) =>
+  const filteredProducts = products.filter((product) => {
+    const lowercaseTags = product.tags.map((tag) => tag.toLowerCase());
+    return (
       product.name.toLowerCase().includes(searchtext) ||
-      product.tags.indexOf(searchtext.toLowerCase()) > 0
-  );
+      lowercaseTags.indexOf(searchtext) > -1
+    );
+  });
   return {
     products: filteredProducts,
   };

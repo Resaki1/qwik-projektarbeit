@@ -1,9 +1,9 @@
 .product {
-  --product-card-height: 192px;
+  --product-card-height: 256px;
   background: #fafffd;
   box-shadow: var(--default-shadow);
   height: var(--product-card-height);
-  width: 160px;
+  width: calc(var(--product-card-height) / 1.382);
 
   border-radius: 8px;
 
@@ -27,7 +27,6 @@
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
     }
 
     .product__details {
