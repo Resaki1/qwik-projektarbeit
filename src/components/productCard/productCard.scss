@@ -1,16 +1,19 @@
 .product {
   --product-card-height: 256px;
+  --product-card-width: calc(var(--product-card-height) / 1.382);
   background: #fafffd;
   box-shadow: var(--default-shadow);
   height: var(--product-card-height);
-  width: calc(var(--product-card-height) / 1.382);
+  width: var(--product-card-width);
 
   border-radius: 8px;
 
   img {
-    height: calc(var(--product-card-height) / 1.618);
+    --product-image-height: calc(var(--product-card-height) / 1.618);
+    height: var(--product-image-height);
     width: 100%;
     border-radius: 8px 8px 0px 0px;
+    aspect-ratio: var(--product-card-width) / var(--product-image-height);
   }
 
   .product__info {

@@ -10,7 +10,7 @@ export default component$(() => {
 
   return (
     <header>
-      <Link href="/">
+      <Link href="/" aria-label="lookal's homepage">
         <Logo />
       </Link>
       <div class="header_search">
@@ -29,6 +29,7 @@ export default component$(() => {
           <Link
             href={`/products/${searchtext.value}`}
             class="header_search-button"
+            aria-label="search for products"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +48,7 @@ export default component$(() => {
           </Link>
         </div>
       </div>
-      <Link href="/products">
+      <Link href="/products" aria-label="your shopping cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
