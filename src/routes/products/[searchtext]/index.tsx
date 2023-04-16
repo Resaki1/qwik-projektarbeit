@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import ProductCard from "~/components/ProductCard/ProductCard";
-import { products } from "./products";
+import { products } from "~/data/products";
 import styles from "./products.scss?inline";
 
 /* export const onGet = () => {
