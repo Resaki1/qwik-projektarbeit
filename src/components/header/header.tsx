@@ -1,10 +1,11 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import Logo from "../Logo/Logo";
 import styles from "./Header.scss?inline";
 
 export default component$(() => {
   useStylesScoped$(styles);
+  const searchtext = useSignal("");
 
   return (
     <header>
@@ -12,9 +13,16 @@ export default component$(() => {
         <Logo />
       </Link>
       <div class="header_search">
-        <input type="text" placeholder="Suche Produkte" />
+        <input
+          type="text"
+          placeholder="Suche Produkte"
+          bind:value={searchtext}
+        />
         <div class="header_search-button">
-          <Link href="/products" class="header_search-button">
+          <Link
+            href={`/products/${searchtext.value}`}
+            class="header_search-button"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

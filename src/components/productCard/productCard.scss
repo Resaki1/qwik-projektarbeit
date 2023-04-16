@@ -1,9 +1,7 @@
 .product {
   --product-card-height: 192px;
-  background: rgba(255, 255, 255, 0.85);
-  opacity: 0.85;
+  background: #fafffd;
   box-shadow: var(--default-shadow);
-  backdrop-filter: var(--default-bg-blur);
   height: var(--product-card-height);
   width: 160px;
 
@@ -27,6 +25,9 @@
 
     h3 {
       margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .product__details {

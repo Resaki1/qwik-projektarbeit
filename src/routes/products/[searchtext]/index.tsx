@@ -8,9 +8,15 @@ import styles from "./products.scss?inline";
   console.log("test");
 }; */
 
-export const useGetProducts = routeLoader$(() => {
+export const useGetProducts = routeLoader$(({ params }) => {
+  const searchtext = params.searchtext.toLowerCase();
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchtext) ||
+      product.tags.indexOf(searchtext.toLowerCase()) > 0
+  );
   return {
-    products,
+    products: filteredProducts,
   };
 });
 
