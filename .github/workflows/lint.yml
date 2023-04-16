@@ -23,3 +23,10 @@ jobs: # list of things to do
 
       - name: Code Linting
         run: npm run lint
+
+  building:
+    name: Building
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building
+        run: npm run build
