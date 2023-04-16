@@ -20,6 +20,10 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Shop smarter and support your community with lookal. Find and explore a wide range of products online, and buy them locally in your town. Get your purchases quickly with no need to wait days for delivery, and support your local shops in the process. Discover the benefits of buying locally with lookal today!"
+        />
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>

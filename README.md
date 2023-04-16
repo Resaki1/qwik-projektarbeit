@@ -78,6 +78,6 @@ npm run build # or `yarn build`
 
 ## Lighthouse Score
 
-| Performance | Best Practices | Accessibility | SEO | PWA |
-| ----------- | -------------- | ------------- | --- | --- |
-| 99%         | 97%            | 100%          | 91% | no  |
+| Performance | Best Practices | Accessibility | SEO  | PWA |
+| ----------- | -------------- | ------------- | ---- | --- |
+| 100%        | 100%           | 100%          | 100% | no  |
