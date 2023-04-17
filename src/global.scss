@@ -6,7 +6,7 @@
   --color-primary: rgb(var(--primary));
   --color-white: #fafffd;
   --color-white-frosted: rgba(var(--white), 0.5);
-  --color-background: rgb(var(--white));
+  --color-background: #f2f0ff;
   --color-font: #3e3e3e;
 
   --default-bg-blur: blur(12px);
@@ -24,6 +24,7 @@ body {
   min-height: 100vh;
   color: var(--color-font);
   caret-color: var(--color-primary);
+  background-image: url("/assets/noise.png");
 }
 
 main {
