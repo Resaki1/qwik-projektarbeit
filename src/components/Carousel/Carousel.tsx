@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./Carousel.scss?inline";
 
-export default component$(({ images }: { images?: string[] }) => {
+export default component$(({ images }: { images: string[] }) => {
   useStylesScoped$(styles);
 
   return (

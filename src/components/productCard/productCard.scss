@@ -1,4 +1,6 @@
 .product {
+  text-decoration: none;
+  color: unset;
   --product-card-height: 256px;
   --product-card-width: calc(var(--product-card-height) / 1.382);
   background: #fafffd !important;
@@ -7,6 +9,13 @@
   width: var(--product-card-width);
 
   border-radius: 8px;
+
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    box-shadow: var(--hover-shadow);
+    transform: scale(1.02);
+  }
 
   img {
     --product-image-height: calc(var(--product-card-height) / 1.618);
@@ -26,10 +35,6 @@
     box-sizing: border-box;
     height: calc(100% - (var(--product-card-height) / 1.618));
     transform: translateY(-3px);
-
-    * {
-      text-decoration: none;
-    }
 
     h3 {
       margin: 0;

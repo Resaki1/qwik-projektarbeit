@@ -23,11 +23,12 @@ export default component$(() => {
   return (
     <div>
       <h1>{product.name}</h1>
-      <Carousel images={product.images} />
-      <div>{product.price}€</div>
+      <Carousel images={[product.imageUrl!, ...product.images!]} />
       <div>{product.description}</div>
-      <div>{product.rating}/5</div>
-      <div>{product.distance}km</div>
+      <div>{product.price}€</div>
+      <p>{product.rating}/5</p>
+      <p>{product.distance}km</p>
+      <h3>Verfügbarkeit</h3>
       <ul>
         {product.stores.map((store) => (
           <li key={store.id}>
@@ -37,6 +38,7 @@ export default component$(() => {
           </li>
         ))}
       </ul>
+      <h3>Rezensionen</h3>
       <ul>
         {product.reviews?.map((review) => (
           <li key={review.id}>

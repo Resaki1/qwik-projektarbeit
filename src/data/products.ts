@@ -12,7 +12,8 @@ export const products: Product[] = [
   },
   {
     id: "8f464f5e-0a2b-4f1f-b0fc-5d89e3f3d3e6",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://images.philips.com/is/image/philipsconsumer/8c81256013774e6dab7cad140129639a?wid=840&hei=720&$jpglarge$",
     name: "Philips HD9741/10 Airfryer",
     price: 179.99,
     distance: 0.4,
@@ -20,7 +21,7 @@ export const products: Product[] = [
   },
   {
     id: "a7b1c063-8b8a-4660-975a-53c60d2280b7",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl: "https://m.media-amazon.com/images/I/61e+Ty97EzL._AC_SX466_.jpg",
     name: "Tefal OptiGrill Elite",
     price: 249.99,
     distance: 0.3,
@@ -28,7 +29,8 @@ export const products: Product[] = [
   },
   {
     id: "7ee79d21-2070-48e1-9075-f7de52e5fb5d",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://media.direct.playstation.com/is/image/psdglobal/PS5-console-front?$TwoColumn_Large$",
     name: "Sony PlayStation 5",
     price: 499,
     distance: 0.3,
@@ -45,7 +47,8 @@ export const products: Product[] = [
   },
   {
     id: "c87f7a3a-eeb3-4692-a18f-7a9f5e774d8c",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-finish-select-202212-11inch-space-gray-wifi_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1670865949101",
     name: "Apple iPad Pro",
     price: 899,
     distance: 0.4,
@@ -61,7 +64,8 @@ export const products: Product[] = [
   },
   {
     id: "4c4dd4cb-4d70-4f77-8f15-7b101299ed6f",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://assets.bose.com/content/dam/cloudassets/Bose_DAM/Web/consumer_electronics/global/products/headphones/qc35_ii/product_silo_images/qc35_ii_le_midnight_blue_hero.PNG/_jcr_content/renditions/cq5dam.web.1280.1280.png",
     name: "Bose QuietComfort 35 II",
     price: 299,
     distance: 0.1,
@@ -78,7 +82,8 @@ export const products: Product[] = [
   },
   {
     id: "6419a7c5-5d28-45c3-8d2e-c0f1d133decc",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://cdn.preis.de/p/76448/1800x1800/85/1/Ralph-Lauren-Poloshirt-Herren-1640783314901.jpg",
     name: "Ralph Lauren Polo-Shirt",
     price: 89,
     distance: 0.2,
@@ -95,7 +100,8 @@ export const products: Product[] = [
   },
   {
     id: "3219a7c5-5d28-45c3-8d2e-c0f1d133deef",
-    imageUrl: "https://picsum.photos/370/316",
+    imageUrl:
+      "https://der-fahrradtester.de/wp-content/uploads/2020/08/Orbea-Gain-F30-1.jpg",
     name: "Orbea Gain F30",
     price: 2899.99,
     distance: 0.9,
