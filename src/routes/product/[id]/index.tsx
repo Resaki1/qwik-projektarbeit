@@ -70,7 +70,21 @@ export default component$(() => {
       </div>
       <div class="product-details__reviews">
         <h3>Bewertungen</h3>
-        <p>{product.rating}/5</p>
+        <div class="product-details__reviews-rating">
+          <div
+            class="stars"
+            style={{
+              background: `linear-gradient(
+    to right,
+    #fc0 0%,
+    #fc0 calc(${product.rating / 5} * 100%),
+    #ddd calc(${product.rating / 5} * 100%),
+    #ddd 100%
+  )`,
+            }}
+          />
+          <span>{Math.round(product.rating * 10) / 10}</span>
+        </div>
         <ul>
           {product.reviews?.map((review) => (
             <li key={review.id}>

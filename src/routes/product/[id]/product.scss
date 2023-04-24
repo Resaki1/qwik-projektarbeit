@@ -101,6 +101,14 @@
         margin: 0;
       }
     }
+
+    &-rating {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -108,4 +116,21 @@
   .product-details {
     flex-direction: column;
   }
+}
+
+.stars {
+  position: relative;
+  display: inline-block;
+  width: 100px; /* width of a single star */
+  height: 20px; /* height of a single star */
+  background: #ddd;
+
+  -webkit-mask-image: url("/assets/star.svg");
+  mask-image: url("/assets/star.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position: left center;
+  mask-position: left center;
 }

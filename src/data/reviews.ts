@@ -18,6 +18,14 @@ export const reviews: Review[] = [
     date: "2023-03-17",
   },
   {
+    id: "c13c1301-9256-48e6-b029-fd334c68e5f8",
+    productId: "dd3079c3-3b0f-4372-a156-0e04c2d92811",
+    author: "Bernd",
+    rating: 1,
+    text: "Es hat geregnet als sie geliefert wurde",
+    date: "2022-11-27",
+  },
+  {
     id: "cf8b5fc5-5f5d-4c7f-8ec5-5d51eb24e466",
     productId: "8f464f5e-0a2b-4f1f-b0fc-5d89e3f3d3e6",
     author: "Anna",
