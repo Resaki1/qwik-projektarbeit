@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 :root {
   --primary: 110, 96, 204;
+  --secondary: 96, 204, 164;
   --white: 250, 255, 253;
 
   --color-primary: rgb(var(--primary));
+  --color-secondary: rgb(var(--secondary));
   --color-white: #fafffd;
   --color-white-frosted: rgba(var(--white), 0.5);
   --color-background: #f2f0ff;
@@ -59,4 +61,38 @@ a {
 
 .primary {
   color: var(--color-primary);
+}
+
+.button {
+  all: unset;
+  width: 160px;
+  background: var(--color-white);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  padding: 8px 16px;
+  border-radius: 16px;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  box-shadow: var(--default-shadow);
+
+  transition: all 0.12s ease-in-out;
+
+  &:hover {
+    box-shadow: var(--hover-shadow);
+    filter: brightness(1.1);
+  }
+
+  &.primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  &.secondary {
+    background: var(--color-white);
+    color: var(--color-primary);
+  }
 }

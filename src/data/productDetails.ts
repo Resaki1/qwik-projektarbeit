@@ -4,7 +4,7 @@ export const productDetails: ProductDetails[] = [
   {
     id: "dd3079c3-3b0f-4372-a156-0e04c2d92811",
     description:
-      "Eine leistungsstarke Waschmaschine von Bosch mit vielen Funktionen.",
+      "Eine leistungsstarke Waschmaschine von Bosch mit vielen Funktionen. Spart Zeit, Wasser und Energie - Die Sensoren der ProSense Mengenautomatik ermitteln automatisch die Wäschemenge für einen maßgeschneiderten Waschzyklus. Zeit-, Wasser- und Energieverbrauch werden um bis zu 40 % gesenkt. So erhält Ihre Wäsche exakt die richtige Pflege bei jedem Waschvorgang.",
     reviews: [
       "ee9f1d2f-0d29-46b2-89a7-51856e6e94fb",
       "899f1d2f-0d29-46b2-89a7-51856e6e94fc",

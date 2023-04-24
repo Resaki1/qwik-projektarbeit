@@ -1,30 +1,111 @@
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-body {
-  font-family: sans-serif;
+.product-details {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border-radius: 8px;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__price {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+  }
+
+  &__text {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &__shops {
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        img {
+          width: 128px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  &__reviews {
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        img {
+          width: 128px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &-author {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      h4 {
+        margin: 0;
+      }
+    }
+  }
 }
 
-.gallery {
-  background: #eee;
-}
-
-.gallery-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8c8;
-  counter-increment: gallery-cell;
-}
-
-/* cell number */
-.gallery-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
+@media screen and (max-width: 824px) {
+  .product-details {
+    flex-direction: column;
+  }
 }
