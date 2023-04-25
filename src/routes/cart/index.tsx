@@ -21,17 +21,36 @@ export default component$(() => {
     cartItems.value = value;
   });
 
+  let totalPrice = 0;
+
+  if (cart.items.length === 0)
+    return (
+      <>
+        <h1>Warenkorb</h1>
+        <p>Upps, dein Warenkorb ist leer!</p>
+      </>
+    );
+
   return (
     <>
       <h1>Warenkorb</h1>
-      {cart.items.length === 0 && <p>Upps, dein Warenkorb ist leer!</p>}
       <ul>
-        {cartItems.value?.map((item, index) => (
-          <li key={index}>
-            {item.name} - {item.price}€
-          </li>
-        ))}
+        {cartItems.value?.map((item, index) => {
+          const quantity = cart.items.filter(
+            (cartItem) => cartItem.id === item.id
+          ).length;
+
+          const price = item.price * quantity;
+          totalPrice += price;
+
+          return (
+            <li key={index}>
+              {quantity}x {item.name} - insgesamt {price}€
+            </li>
+          );
+        })}
       </ul>
+      <p>{totalPrice}€</p>
     </>
   );
 });

@@ -72,7 +72,9 @@ export default component$(() => {
                   {store.address}
                 </a>
               </div>
-              <div>{product.distance}km</div>
+              <div class="product-details__shops-distance">
+                {product.distance}km
+              </div>
             </li>
           ))}
         </ul>

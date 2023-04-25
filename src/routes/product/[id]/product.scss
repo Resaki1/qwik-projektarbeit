@@ -57,13 +57,19 @@
         all: unset;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: start;
+        margin-bottom: 2rem;
 
         img {
           width: 128px;
           object-fit: contain;
+          margin-right: 2rem;
         }
       }
+    }
+
+    &-distance {
+      margin-left: auto;
     }
   }
 

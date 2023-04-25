@@ -10,7 +10,7 @@ export const stores: Store[] = [
   {
     id: "2",
     name: "Intersport",
-    address: "Kaiserstraße 59-61, 76133 Karlsruhe, Germany",
+    address: "Kriegsstraße 122, 76133 Karlsruhe, Germany",
     logo: "https://www.intersport.de/media/vector/12/c4/7f/IntersportLogoOlXxcESCOqAmp.svg",
   },
   {
