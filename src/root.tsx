@@ -1,4 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import {
+  component$,
+  createContextId,
+  useContextProvider,
+  useStore,
+} from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -8,7 +13,20 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.scss";
 
+export type Cart = {
+  items: {
+    id: string;
+    quantity: number;
+  }[];
+};
+
+export const cartContext = createContextId<Cart>("cart");
+
 export default component$(() => {
+  const cart = useStore({
+    items: [],
+  });
+  useContextProvider(cartContext, cart);
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
    * immediately followed by the document's <head> and <body>.

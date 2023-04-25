@@ -1,11 +1,19 @@
-import { component$, useSignal, useStylesScoped$ } from "@builder.io/qwik";
+import {
+  component$,
+  useContext,
+  useSignal,
+  useStylesScoped$,
+} from "@builder.io/qwik";
 import { Link, useNavigate } from "@builder.io/qwik-city";
 import Logo from "../Logo/Logo";
 import styles from "./Header.scss?inline";
+import { cartContext } from "~/root";
 
 export default component$(() => {
   const navigate = useNavigate();
   useStylesScoped$(styles);
+
+  const cart = useContext(cartContext);
   const searchtext = useSignal("");
 
   return (
@@ -48,7 +56,7 @@ export default component$(() => {
           </Link>
         </div>
       </div>
-      <Link href="/products" aria-label="your shopping cart">
+      <Link href="/cart" aria-label="your shopping cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -64,6 +72,7 @@ export default component$(() => {
           <circle cx="19" cy="21" r="1"></circle>
           <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
         </svg>
+        <span class="header_cart-count">{cart.items.length}</span>
       </Link>
     </header>
   );

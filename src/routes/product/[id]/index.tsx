@@ -1,4 +1,4 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import Carousel from "~/components/Carousel/Carousel";
 import { productDetails } from "~/data/productDetails";
@@ -6,6 +6,7 @@ import { products } from "~/data/products";
 import { reviews } from "~/data/reviews";
 import { stores } from "~/data/stores";
 import styles from "./product.scss?inline";
+import { cartContext } from "~/root";
 
 export const useGetProductDetails = routeLoader$(({ params }) => {
   const id = params.id;
@@ -30,6 +31,7 @@ export const useGetProductDetails = routeLoader$(({ params }) => {
 export default component$(() => {
   const product = useGetProductDetails().value;
   useStylesScoped$(styles);
+  const cart = useContext(cartContext);
 
   return (
     <div class="product">
@@ -39,7 +41,14 @@ export default component$(() => {
         <div class="product-details__description">
           <div class="product-details__cta">
             <p class="product-details__price">{product.price}€</p>
-            <button class="button secondary">zum Warenkorb</button>
+            <button
+              onClick$={() => {
+                cart.items.push({ id: product.id!, quantity: 1 });
+              }}
+              class="button secondary"
+            >
+              zum Warenkorb
+            </button>
             <button class="button primary">jetzt kaufen</button>
           </div>
           <div class="product-details__text">{product.description}</div>
@@ -91,6 +100,7 @@ export default component$(() => {
               <div class="product-details__reviews-author">
                 <h4>{review.author}</h4>
                 <div>{review.rating}/5</div>
+                <div>{review.date}</div>
               </div>
               <div>{review.text}</div>
             </li>

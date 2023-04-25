@@ -76,6 +76,13 @@ npm run build # or `yarn build`
   - Not for Layouts, dev server needs to be restarted
   - Not for external content (i.e., image URLs)
   - CSS sometimes not updating, needs restart as well
+- Problems with persistent state
+  - context works fine for app-wide state, but has no persistence between page refreshes
+  - adding localstorage for persistency only works client-side
+  - useVisibleTask$() lets you run code only client-side, but setting the state in that function leads to the state never updating anymore
+  - setting it on page load does not work either
+  - using Qwik City's <Link /> instead of <a /> for navigation would at least allow for the state to persist between page navigations, but the <Link /> component can't be styled?
+  - -> reactive and persistent state not possible?
 
 ## Lighthouse Score
 
