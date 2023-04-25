@@ -69,6 +69,7 @@ npm run build # or `yarn build`
 ## Benefits
 
 - Great performance out of the box
+- Uses JSX -> great when coming from React
 
 ## Drawbacks
 
@@ -81,7 +82,7 @@ npm run build # or `yarn build`
   - adding localstorage for persistency only works client-side
   - useVisibleTask$() lets you run code only client-side, but setting the state in that function leads to the state never updating anymore
   - setting it on page load does not work either
-  - using Qwik City's <Link /> instead of <a /> for navigation would at least allow for the state to persist between page navigations, but the <Link /> component can't be styled?
+  - using Qwik City's `<Link />` instead of `<a />` for navigation would at least allow for the state to persist between page navigations, but the `<Link />` component can't be styled?
   - -> reactive and persistent state not possible?
 
 ## Lighthouse Score
