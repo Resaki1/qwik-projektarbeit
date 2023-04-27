@@ -12,15 +12,9 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.scss";
+import type { CartType } from "./routes/cart";
 
-export type Cart = {
-  items: {
-    id: string;
-    quantity: number;
-  }[];
-};
-
-export const cartContext = createContextId<Cart>("cart");
+export const cartContext = createContextId<CartType>("cart");
 
 export default component$(() => {
   const cart = useStore({

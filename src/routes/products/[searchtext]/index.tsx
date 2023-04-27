@@ -14,7 +14,7 @@ export const useGetProducts = routeLoader$(({ params }) => {
     const lowercaseTags = product.tags.map((tag) => tag.toLowerCase());
     return (
       product.name.toLowerCase().includes(searchtext) ||
-      lowercaseTags.indexOf(searchtext) > -1
+      lowercaseTags.filter((tag) => tag.includes(searchtext)).length > 0
     );
   });
   return {

@@ -1,27 +1,64 @@
-import { component$, useContext, useSignal } from "@builder.io/qwik";
+import {
+  Resource,
+  component$,
+  useContext,
+  useResource$,
+} from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
+import type { CartProps } from "~/components/Cart/Cart";
+import Cart from "~/components/Cart/Cart";
 import { products } from "~/data/products";
-import type { Cart } from "~/root";
 import { cartContext } from "~/root";
 import type { Product } from "~/types";
 
-const getCartItems = server$((cart: Cart) => {
+export type CartItem = Product & {
+  quantity: number;
+};
+
+export type CartType = {
+  items: {
+    id: string;
+    quantity: number;
+  }[];
+};
+
+const getCartItems = server$((cart: CartType) => {
+  let totalPrice = 0;
   const items = products.filter((product) =>
     cart.items.some((item) => item.id === product.id)
   );
 
-  return items;
+  const cartItems = items.map((item) => {
+    const quantity = cart.items.filter(
+      (cartItem) => cartItem.id === item.id
+    ).length;
+
+    totalPrice += item.price * quantity;
+
+    return {
+      ...item,
+      quantity,
+    };
+  });
+
+  return {
+    items: cartItems,
+    totalPrice: Math.round(totalPrice * 100) / 100,
+  };
 });
 
 export default component$(() => {
   const cart = useContext(cartContext);
-  const cartItems = useSignal<Product[]>();
+  //const cartItems = useSignal<Cart2>();
 
-  getCartItems(cart).then((value) => {
-    cartItems.value = value;
+  const cartItems = useResource$<CartProps>(async ({ track }) => {
+    track(() => cart.items);
+    return await getCartItems(cart);
   });
 
-  let totalPrice = 0;
+  /* getCartItems(cart).then((value) => {
+    cartItems.value = value;
+  }); */
 
   if (cart.items.length === 0)
     return (
@@ -34,23 +71,27 @@ export default component$(() => {
   return (
     <>
       <h1>Warenkorb</h1>
-      <ul>
-        {cartItems.value?.map((item, index) => {
-          const quantity = cart.items.filter(
-            (cartItem) => cartItem.id === item.id
-          ).length;
-
-          const price = item.price * quantity;
-          totalPrice += price;
+      {
+        <Resource
+          value={cartItems}
+          onPending={() => <p>Warenkorb lädt...</p>}
+          onResolved={(cart) => <Cart {...cart} />}
+        />
+      }
+      {/* <ul>
+        {cartItems.value?.items.map((item, index) => {
+          console.log("render");
+          const price = item.price * item.quantity;
 
           return (
             <li key={index}>
-              {quantity}x {item.name} - insgesamt {price}€
+              <img src={item.imageUrl} alt={item.name} />
+              {item.quantity}x {item.name} - insgesamt {price}€
             </li>
           );
         })}
       </ul>
-      <p>{totalPrice}€</p>
+      <p>{cartItems.value?.totalPrice}€</p> */}
     </>
   );
 });

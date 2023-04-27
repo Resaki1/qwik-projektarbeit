@@ -77,6 +77,7 @@ npm run build # or `yarn build`
   - Not for Layouts, dev server needs to be restarted
   - Not for external content (i.e., image URLs)
   - CSS sometimes not updating, needs restart as well
+  - HMR often completely reloads the app and clears the state, making developing annoying
 - Problems with persistent state
   - context works fine for app-wide state, but has no persistence between page refreshes
   - adding localstorage for persistency only works client-side
