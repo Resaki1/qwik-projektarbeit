@@ -11,7 +11,7 @@ export default component$((cart: CartProps) => {
   useStyles$(styles);
 
   return (
-    <>
+    <div class="cart">
       <ul>
         {cart.items.map((item, index) => {
           const price = item.price * item.quantity;
@@ -31,6 +31,6 @@ export default component$((cart: CartProps) => {
         <p>{cart.totalPrice}€</p>
         <button class="button primary">Zur Kasse</button>
       </div>
-    </>
+    </div>
   );
 });

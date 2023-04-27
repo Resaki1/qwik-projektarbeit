@@ -69,7 +69,9 @@ npm run build # or `yarn build`
 ## Benefits
 
 - Great performance out of the box
+  - Very fast page refreshes and navigations, because both JS and CSS are serialized and baked into the HTML -> HTML is pre-rendered on the server and can then be cached
 - Uses JSX -> great when coming from React
+- With QwikCity, server-functionality can be executed right on the web server without the need for an additional backend; code, types etc. for server and client can be written in the same file
 
 ## Drawbacks
 
@@ -85,9 +87,10 @@ npm run build # or `yarn build`
   - setting it on page load does not work either
   - using Qwik City's `<Link />` instead of `<a />` for navigation would at least allow for the state to persist between page navigations, but the `<Link />` component can't be styled?
   - -> reactive and persistent state not possible?
+- Same problems as every other new JS library: Very small ecosystem of third-party libraries compared to established players like React, Angular and Vue
 
 ## Lighthouse Score
 
 | Performance | Best Practices | Accessibility | SEO  | PWA |
 | ----------- | -------------- | ------------- | ---- | --- |
-| 100%        | 100%           | 100%          | 100% | no  |
+| 98%         | 100%           | 100%          | 100% | no  |
