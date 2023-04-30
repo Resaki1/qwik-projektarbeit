@@ -4,8 +4,19 @@ import ProductCard from "~/components/ProductCard/ProductCard";
 import { products } from "~/data/products";
 import styles from "./products.scss?inline";
 
+export enum Search {
+  ALL = "all",
+}
+
 export const useGetProducts = routeLoader$(({ params }) => {
   const searchtext = params.searchtext.toLowerCase();
+
+  if (searchtext === Search.ALL) {
+    return {
+      products,
+    };
+  }
+
   const filteredProducts = products.filter((product) => {
     const lowercaseTags = product.tags.map((tag) => tag.toLowerCase());
     return (

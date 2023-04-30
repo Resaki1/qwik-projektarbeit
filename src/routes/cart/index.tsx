@@ -78,20 +78,6 @@ export default component$(() => {
           onResolved={(cart) => <Cart {...cart} />}
         />
       }
-      {/* <ul>
-        {cartItems.value?.items.map((item, index) => {
-          console.log("render");
-          const price = item.price * item.quantity;
-
-          return (
-            <li key={index}>
-              <img src={item.imageUrl} alt={item.name} />
-              {item.quantity}x {item.name} - insgesamt {price}€
-            </li>
-          );
-        })}
-      </ul>
-      <p>{cartItems.value?.totalPrice}€</p> */}
     </>
   );
 });

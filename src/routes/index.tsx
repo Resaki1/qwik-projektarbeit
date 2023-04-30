@@ -1,5 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { Link } from "@builder.io/qwik-city";
 import ShoppingIllustration from "~/components/ShoppingIllustration/ShoppingIllustration";
 import styles from "./index.scss?inline";
 
@@ -15,6 +16,12 @@ export default component$(() => {
         <p>
           Finde alles was du brauchst bei deinen{" "}
           <span class="logo primary">lookalen</span> Shops!
+        </p>
+        <p class="home_claim-text">
+          Suche zum Beispiel nach Produkten für deine{" "}
+          <Link href="/products/küche" class="home_claim-link">
+            Küche!
+          </Link>
         </p>
       </div>
       <div class="home_illustration">
