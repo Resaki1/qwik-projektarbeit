@@ -4,7 +4,7 @@ This project was part of my master's program and the goal was to explore [Qwik](
 
 <br />
 
-# [Demo](https://9ad00805.qwik-projektarbeit.pages.dev/)
+# [Demo](https://qwik-projektarbeit.pages.dev/)
 
 <br />
 
