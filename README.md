@@ -8,6 +8,22 @@ This project was part of my master's program and the goal was to explore [Qwik](
 
 <br />
 
+## About Qwik
+
+> Qwik is a new kind of web framework that can deliver instant loading web applications at any size or complexity. Your sites and apps can boot with about 1kb of JS (regardless of application complexity), and achieve consistent performance at scale.
+
+> Qwik apps begin their life as SSR/SSG. Qwik serializes the application's state and framework state into HTML upon rendering the application. Then Qwik can resume execution where the server left off in the browser because all the data Qwik needs is in HTML. No JS needs to be downloaded or executed until it is needed to handle user interaction or rendering.
+
+([Qwik Documentation](https://qwik.builder.io/docs/))
+
+## About Qwik City
+
+> Qwik City is an accompanying meta-framework for building Qwik sites. Qwik City provides directory base routing, data fetching, bundle optimization, prefetching, streaming, and interoperability with edge function providers to ensure that out of the box, your site can take full advantage of Qwik and deliver instant-on web apps.
+
+([builder.io blog](https://www.builder.io/blog/qwik-and-qwik-city-have-reached-beta))
+
+<br />
+
 # Getting Started
 
 To run this project on your local machine, you need to have Node.js installed. Clone this repository and run the following commands:
@@ -55,4 +71,4 @@ This will start the development server and you can access the application by nav
 
 | Performance | Best Practices | Accessibility | SEO  | PWA |
 | ----------- | -------------- | ------------- | ---- | --- |
-| 98%         | 100%           | 100%          | 100% | no  |
+| 96%         | 100%           | 100%          | 100% | no  |
