@@ -86,4 +86,4 @@ The final deployment on Cloudflare Pages can be accessed on https://qwik-projekt
 
 | Performance | Best Practices | Accessibility | SEO  | PWA |
 | ----------- | -------------- | ------------- | ---- | --- |
-| 95%         | 100%           | 92%           | 100% | no  |
+| 99%         | 100%           | 92%           | 100% | yes |

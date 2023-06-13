@@ -36,7 +36,9 @@ export default component$(() => {
           name="description"
           content="Shop smarter and support your community with lookal. Find and explore a wide range of products online, and buy them locally in your town. Get your purchases quickly with no need to wait days for delivery, and support your local shops in the process. Discover the benefits of buying locally with lookal today!"
         />
+        <meta name="theme-color" content="#6e60cc" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/logo-192.png" />
         <RouterHead />
       </head>
       <body lang="en">
