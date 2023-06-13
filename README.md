@@ -6,6 +6,8 @@ This project was part of my master's program and the goal was to explore [Qwik](
 
 # [Demo](https://qwik-projektarbeit.pages.dev/)
 
+<img src="https://qwik-projektarbeit.pages.dev/screenshot.png" />
+
 <br />
 
 ## About Qwik
@@ -62,6 +64,7 @@ The final deployment on Cloudflare Pages can be accessed on https://qwik-projekt
   - Very fast page refreshes and navigations, because both JS and CSS are serialized and baked into the HTML -> HTML is pre-rendered on the server and can then be cached
 - Uses JSX -> great when coming from React
 - With QwikCity, server-functionality can be executed right on the web server without the need for an additional backend; code, types etc. for server and client can be written in the same file
+  - QwikCity also makes it easy to extend the application to a PWA (even though the documentation on that isn't great)
 - Deployment to Cloudflare Pages without any problems (unlike SvelteKit)
 
 ## Drawbacks
@@ -79,6 +82,8 @@ The final deployment on Cloudflare Pages can be accessed on https://qwik-projekt
   - using Qwik City's `<Link />` instead of `<a />` for navigation would at least allow for the state to persist between page navigations, but the `<Link />` component can't be styled?
   - -> reactive and persistent state not possible?
 - Same problem as every other new JS library: Very small ecosystem of third-party libraries compared to established players like React, Angular and Vue
+
+Overall, Qwik is a promising framework with excellent performance and JSX support, making it appealing for React developers. The integration of server functionality through QwikCity is a standout feature, but the ecosystem is still limited compared to more established frameworks. I think it is definetly worth to check out Qwik, but it will provbably not replace e.g., React and Next.js.
 
 <br />
 
