@@ -1,11 +1,19 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { Form } from "@builder.io/qwik-city";
+import { Form, RequestHandler } from "@builder.io/qwik-city";
 import {
   useAuthSession,
   useAuthSignin,
   useAuthSignout,
 } from "~/routes/plugin@auth";
 import styles from "./login.scss?inline";
+import { Session } from "@auth/core/types";
+
+export const onRequest: RequestHandler = (event) => {
+  const session: Session | null = event.sharedMap.get("session");
+  if (session && new Date(session.expires) > new Date()) {
+    throw event.redirect(302, `/account`);
+  }
+};
 
 export default component$(() => {
   useStylesScoped$(styles);
