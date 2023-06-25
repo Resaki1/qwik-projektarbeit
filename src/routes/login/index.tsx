@@ -1,12 +1,13 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { Form, RequestHandler } from "@builder.io/qwik-city";
+import type { RequestHandler } from "@builder.io/qwik-city";
+import { Form } from "@builder.io/qwik-city";
 import {
   useAuthSession,
   useAuthSignin,
   useAuthSignout,
 } from "~/routes/plugin@auth";
 import styles from "./login.scss?inline";
-import { Session } from "@auth/core/types";
+import type { Session } from "@auth/core/types";
 
 export const onRequest: RequestHandler = (event) => {
   const session: Session | null = event.sharedMap.get("session");

@@ -4,7 +4,7 @@ import {
   useContext,
   useResource$,
 } from "@builder.io/qwik";
-import { server$ } from "@builder.io/qwik-city";
+import { Link, server$ } from "@builder.io/qwik-city";
 import type { CartProps } from "~/components/Cart/Cart";
 import Cart from "~/components/Cart/Cart";
 import { products } from "~/data/products";
@@ -65,6 +65,10 @@ export default component$(() => {
       <>
         <h1>Warenkorb</h1>
         <p>Upps, dein Warenkorb ist leer!</p>
+        <p>
+          <Link href="/products">Suche hier </Link>
+          nach tollen Produkten in deiner Stadt!
+        </p>
       </>
     );
 
