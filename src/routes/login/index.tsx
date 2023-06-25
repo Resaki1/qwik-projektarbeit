@@ -48,6 +48,22 @@ export default component$(() => {
           />
           anmelden via Github
         </button>
+        <button
+          onClick$={() =>
+            signIn.submit({
+              providerId: "google",
+              options: { callbackUrl: "/account" },
+            })
+          }
+          class="button google"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+            height={24}
+            width={24}
+          />
+          anmelden via Google
+        </button>
       </div>
     </Form>
   );

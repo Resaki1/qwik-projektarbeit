@@ -18,6 +18,7 @@ export default component$(() => {
             src={user.image}
             width={256}
             height={256}
+            referrerPolicy="no-referrer"
             alt={`Profilbild von ${user.name}`}
           />
         )}

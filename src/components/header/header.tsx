@@ -95,9 +95,10 @@ export default component$(() => {
             >
               {session.value?.user?.image ? (
                 <img
-                  src={session.value?.user?.image}
+                  src={session.value?.user?.image ?? "/assets/profile.webp"}
                   width={32}
                   height={32}
+                  referrerPolicy="no-referrer"
                   alt={`Profilbild von ${session.value?.user?.name}`}
                 />
               ) : (

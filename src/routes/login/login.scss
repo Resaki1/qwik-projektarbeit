@@ -6,9 +6,12 @@
   gap: 16px;
 
   .login_buttons {
+    display: flex;
+    flex-direction: column;
     background: var(--color-white-frosted);
     backdrop-filter: var(--default-bg-blur);
     padding: 32px 128px;
+    gap: 16px;
     border-radius: 8px;
     box-shadow: var(--default-shadow);
   }
