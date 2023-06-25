@@ -9,7 +9,12 @@ export default component$(({ images }: { images: string[] }) => {
       <div class="slides">
         {images?.map((image, index) => (
           <div id={`slide-${index + 1}`} key={image}>
-            <img src={image} alt={`slide ${index + 1}`} />
+            <img
+              src={image}
+              alt={`slide ${index + 1}`}
+              height={326}
+              width={326}
+            />
           </div>
         ))}
       </div>

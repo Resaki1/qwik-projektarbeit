@@ -7,6 +7,7 @@ import { reviews } from "~/data/reviews";
 import { stores } from "~/data/stores";
 import styles from "./product.scss?inline";
 import { cartContext } from "~/root";
+import { useAuthSession } from "~/routes/plugin@auth";
 
 export const useGetProductDetails = routeLoader$(({ params }) => {
   const id = params.id;
@@ -33,6 +34,8 @@ export default component$(() => {
   useStylesScoped$(styles);
   const cart = useContext(cartContext);
 
+  const session = useAuthSession();
+
   return (
     <div class="product">
       <h1>{product.name}</h1>
@@ -41,15 +44,19 @@ export default component$(() => {
         <div class="product-details__description">
           <div class="product-details__cta">
             <p class="product-details__price">{product.price}€</p>
-            <button
-              onClick$={() => {
-                cart.items.push({ id: product.id!, quantity: 1 });
-              }}
-              class="button secondary"
-            >
-              zum Warenkorb
-            </button>
-            <button class="button primary">jetzt kaufen</button>
+            {session.value?.user && (
+              <>
+                <button
+                  onClick$={() => {
+                    cart.items.push({ id: product.id!, quantity: 1 });
+                  }}
+                  class="button secondary"
+                >
+                  zum Warenkorb
+                </button>
+                <button class="button primary">jetzt kaufen</button>
+              </>
+            )}
           </div>
           <div class="product-details__text">{product.description}</div>
         </div>
@@ -59,7 +66,12 @@ export default component$(() => {
         <ul>
           {product.stores.map((store) => (
             <li key={store.id}>
-              <img src={store.logo} alt={`${store.name} logo`} />
+              <img
+                src={store.logo}
+                alt={`${store.name} logo`}
+                height={36}
+                width={128}
+              />
               <div class="product-details__shops-address">
                 <div>{store.name}</div>
                 <a
