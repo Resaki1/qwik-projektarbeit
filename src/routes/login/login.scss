@@ -1,0 +1,32 @@
+.login_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+
+  .login_buttons {
+    background: var(--color-white-frosted);
+    backdrop-filter: var(--default-bg-blur);
+    padding: 32px 128px;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+  }
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    filter: brightness(1.3);
+    box-shadow: var(--hover-shadow);
+  }
+
+  &.github {
+    background: #24292d;
+    color: var(--color-white);
+  }
+}

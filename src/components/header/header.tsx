@@ -78,18 +78,31 @@ export default component$(() => {
           </svg>
           <span class="header_cart-count">{cart.items.length}</span>
         </Link>
-        <div class="header_account">
+
+        <div class="header_session">
           {!session.value?.user ? (
-            <Link href="/login" class="header_login" aria-label="your account">
+            <Link href="/login" class="header_login" aria-label="login">
               login
             </Link>
           ) : (
             <Link
               href="/account"
-              class="header_login"
+              class="header_account"
               aria-label="your account"
+              style={{
+                display: "flex",
+              }}
             >
-              account
+              {session.value?.user?.image ? (
+                <img
+                  src={session.value?.user?.image}
+                  width={32}
+                  height={32}
+                  alt={`Profilbild von ${session.value?.user?.name}`}
+                />
+              ) : (
+                "account"
+              )}
             </Link>
           )}
         </div>

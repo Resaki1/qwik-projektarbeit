@@ -1,8 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { useAuthSession, useAuthSignout } from "../plugin@auth";
 import { Form } from "@builder.io/qwik-city";
+import styles from "./account.scss?inline";
 
 export default component$(() => {
+  useStylesScoped$(styles);
   const session = useAuthSession();
   const signOut = useAuthSignout();
 
@@ -10,7 +12,7 @@ export default component$(() => {
 
   if (user) {
     return (
-      <Form action={signOut}>
+      <Form action={signOut} class="account_page">
         {user.image && (
           <img
             src={user.image}
@@ -19,9 +21,9 @@ export default component$(() => {
             alt={`Profilbild von ${user.name}`}
           />
         )}
-        <div>{user.name}</div>
-        <div>{user.email}</div>
-        <button>abmelden</button>
+        <h2>{user.name}</h2>
+        <h3>{user.email}</h3>
+        <button class="button primary">abmelden</button>
       </Form>
     );
   }
