@@ -66,6 +66,7 @@ The final deployment on Cloudflare Pages can be accessed on https://qwik-projekt
 - With QwikCity, server-functionality can be executed right on the web server without the need for an additional backend; code, types etc. for server and client can be written in the same file
   - QwikCity also makes it easy to extend the application to a PWA (even though the documentation on that isn't great)
 - Deployment to Cloudflare Pages without any problems (unlike SvelteKit)
+- Authentication made relatively simple thanks to integration of Auth.js
 
 ## Drawbacks
 
@@ -77,10 +78,11 @@ The final deployment on Cloudflare Pages can be accessed on https://qwik-projekt
 - Problems with persistent state
   - context works fine for app-wide state, but has no persistence between page refreshes
   - adding localstorage for persistency only works client-side
-  - useVisibleTask$() lets you run code only client-side, but setting the state in that function leads to the state never updating anymore
+  - useVisibleTask$() lets you run code only client-side, but setting the state in that function leads to the state never updating again
   - setting it on page load does not work either
   - using Qwik City's `<Link />` instead of `<a />` for navigation would at least allow for the state to persist between page navigations, but the `<Link />` component can't be styled?
   - -> reactive and persistent state not possible?
+- Many more small bugs
 - Same problem as every other new JS library: Very small ecosystem of third-party libraries compared to established players like React, Angular and Vue
 
 Overall, Qwik is a promising framework with excellent performance and JSX support, making it appealing for React developers. The integration of server functionality through QwikCity is a standout feature, but the ecosystem is still limited compared to more established frameworks. I think it is definetly worth to check out Qwik, but it will provbably not replace e.g., React and Next.js.
@@ -91,4 +93,4 @@ Overall, Qwik is a promising framework with excellent performance and JSX suppor
 
 | Performance | Best Practices | Accessibility | SEO  | PWA |
 | ----------- | -------------- | ------------- | ---- | --- |
-| 99%         | 100%           | 92%           | 100% | yes |
+| 95%         | 100%           | 92%           | 100% | yes |

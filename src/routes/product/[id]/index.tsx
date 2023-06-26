@@ -1,5 +1,5 @@
 import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
+import { routeLoader$, useNavigate } from "@builder.io/qwik-city";
 import Carousel from "~/components/Carousel/Carousel";
 import { productDetails } from "~/data/productDetails";
 import { products } from "~/data/products";
@@ -35,6 +35,7 @@ export default component$(() => {
   const cart = useContext(cartContext);
 
   const session = useAuthSession();
+  const nav = useNavigate();
 
   return (
     <div class="product">
@@ -44,19 +45,20 @@ export default component$(() => {
         <div class="product-details__description">
           <div class="product-details__cta">
             <p class="product-details__price">{product.price}€</p>
-            {session.value?.user && (
-              <>
-                <button
-                  onClick$={() => {
-                    cart.items.push({ id: product.id!, quantity: 1 });
-                  }}
-                  class="button secondary"
-                >
-                  zum Warenkorb
-                </button>
-                <button class="button primary">jetzt kaufen</button>
-              </>
-            )}
+            <>
+              <button
+                onClick$={() => {
+                  cart.items.push({ id: product.id!, quantity: 1 });
+                  if (!session.value?.user) {
+                    nav("/login");
+                  }
+                }}
+                class="button secondary"
+              >
+                zum Warenkorb
+              </button>
+              <button class="button primary">jetzt kaufen</button>
+            </>
           </div>
           <div class="product-details__text">{product.description}</div>
         </div>
