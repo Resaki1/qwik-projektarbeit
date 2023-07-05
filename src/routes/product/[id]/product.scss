@@ -10,6 +10,36 @@
   gap: 1rem;
   border-radius: 8px;
 
+  &__visuals {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    background-color: var(--color-white);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--default-shadow);
+  }
+
+  &__show-3d {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: var(--color-white);
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--default-shadow);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
   &__description {
     display: flex;
     flex-direction: column;

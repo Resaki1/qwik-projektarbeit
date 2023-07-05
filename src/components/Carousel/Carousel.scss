@@ -2,17 +2,6 @@
   box-sizing: border-box;
 }
 
-.slider {
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-
-  background-color: var(--color-white);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: var(--default-shadow);
-}
-
 .slides {
   display: flex;
 

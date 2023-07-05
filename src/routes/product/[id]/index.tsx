@@ -1,6 +1,12 @@
-import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
+import {
+  component$,
+  useContext,
+  useSignal,
+  useStylesScoped$,
+} from "@builder.io/qwik";
 import { routeLoader$, useNavigate } from "@builder.io/qwik-city";
 import Carousel from "~/components/Carousel/Carousel";
+
 import { productDetails } from "~/data/productDetails";
 import { products } from "~/data/products";
 import { reviews } from "~/data/reviews";
@@ -8,6 +14,7 @@ import { stores } from "~/data/stores";
 import styles from "./product.scss?inline";
 import { cartContext } from "~/root";
 import { useAuthSession } from "~/routes/plugin@auth";
+import { QThreeViewer } from "~/components/ThreeViewer/ThreeViewer";
 
 export const useGetProductDetails = routeLoader$(({ params }) => {
   const id = params.id;
@@ -34,6 +41,8 @@ export default component$(() => {
   useStylesScoped$(styles);
   const cart = useContext(cartContext);
 
+  const show3d = useSignal(false);
+
   const session = useAuthSession();
   const nav = useNavigate();
 
@@ -41,7 +50,19 @@ export default component$(() => {
     <div class="product">
       <h1>{product.name}</h1>
       <div class="product-details">
-        <Carousel images={[product.imageUrl!, ...product.images!]} />
+        <div class="product-details__visuals">
+          {show3d.value ? (
+            <QThreeViewer />
+          ) : (
+            <Carousel images={[product.imageUrl!, ...product.images!]} />
+          )}
+          <button
+            class="product-details__show-3d"
+            onClick$={() => (show3d.value = !show3d.value)}
+          >
+            3D
+          </button>
+        </div>
         <div class="product-details__description">
           <div class="product-details__cta">
             <p class="product-details__price">{product.price}€</p>
