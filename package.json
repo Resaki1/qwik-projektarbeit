@@ -53,6 +53,7 @@
     "wrangler": "^2.20.0"
   },
   "dependencies": {
+    "@react-three/drei": "^9.78.1",
     "@react-three/fiber": "^8.13.4",
     "@types/three": "^0.152.1",
     "three": "^0.154.0"
