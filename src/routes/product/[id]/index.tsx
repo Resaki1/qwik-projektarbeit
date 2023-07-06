@@ -57,7 +57,7 @@ export default component$(() => {
             <Carousel images={[product.imageUrl!, ...product.images!]} />
           )}
           <button
-            class="product-details__show-3d"
+            class={`product-details__show-3d ${show3d.value ? "active" : ""}`}
             onClick$={() => (show3d.value = !show3d.value)}
           >
             3D

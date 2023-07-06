@@ -34,6 +34,16 @@
     box-shadow: var(--default-shadow);
     cursor: pointer;
 
+    &.active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+
+      &:hover {
+        background-color: var(--color-white);
+        color: var(--color-primary);
+      }
+    }
+
     &:hover {
       background-color: var(--color-primary);
       color: var(--color-white);
